@@ -49,8 +49,8 @@ header {
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     background-image: url('logo.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -133,10 +133,30 @@ nav a.active {
     background-color: var(--light-gray);
 }
 
+.services-with-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.hero-image {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.services-content h2 {
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 
@@ -281,5 +301,10 @@ footer button:hover {
 
     .hero p {
         font-size: 1rem;
+    }
+
+    .services-with-image {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }
