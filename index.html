@@ -4,330 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sterns Limited - Professional Dry Cleaning & Laundry Services</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-blue: #003366;
-            --light-blue: #0066cc;
-            --white: #ffffff;
-            --light-gray: #f5f5f5;
-            --dark-gray: #333333;
-            --border-gray: #ddd;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: var(--white);
-        }
-
-        header {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo-placeholder {
-            width: 50px;
-            height: 50px;
-            background-color: var(--white);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: var(--primary-blue);
-            font-size: 24px;
-        }
-
-        .company-title h1 {
-            font-size: 1.8rem;
-            margin: 0;
-        }
-
-        .company-title p {
-            font-size: 0.9rem;
-            margin: 0;
-            opacity: 0.9;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        nav button {
-            background: none;
-            border: none;
-            color: var(--white);
-            cursor: pointer;
-            font-size: 1rem;
-            padding: 0.5rem 1rem;
-            transition: background-color 0.3s;
-            border-radius: 4px;
-        }
-
-        nav button:hover {
-            background-color: var(--light-blue);
-        }
-
-        nav button.active {
-            background-color: var(--light-blue);
-            font-weight: bold;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
-            color: var(--white);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            background-color: var(--white);
-            color: var(--primary-blue);
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .services-section {
-            padding: 3rem 2rem;
-            background-color: var(--light-gray);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-card {
-            background-color: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-gray);
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.1);
-        }
-
-        .service-card h3 {
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .business-hours {
-            background-color: var(--white);
-            padding: 2rem;
-            border: 1px solid var(--border-gray);
-            border-radius: 8px;
-            margin: 2rem 0;
-        }
-
-        .hours-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .hours-grid p {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--border-gray);
-        }
-
-        .contact-section {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        .contact-info div {
-            text-align: center;
-        }
-
-        .contact-info a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: bold;
-            transition: opacity 0.3s;
-        }
-
-        .contact-info a:hover {
-            opacity: 0.8;
-        }
-
-        .page-content {
-            padding: 3rem 2rem;
-            display: none;
-            min-height: 400px;
-        }
-
-        .page-content.active {
-            display: block;
-        }
-
-        h2 {
-            color: var(--primary-blue);
-            margin: 2rem 0 1rem;
-            font-size: 1.8rem;
-        }
-
-        h3 {
-            color: var(--primary-blue);
-            margin: 1.5rem 0 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        ul, ol {
-            margin: 1rem 0 1rem 2rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        footer {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 2rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-
-        footer p {
-            margin: 0.5rem 0;
-            color: var(--white);
-        }
-
-        footer a {
-            color: var(--white);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .checkbox-example {
-            background-color: var(--light-gray);
-            padding: 1rem;
-            border-left: 4px solid var(--light-blue);
-            margin: 1rem 0;
-            border-radius: 4px;
-            font-size: 0.95rem;
-        }
-
-        .divider {
-            border-top: 2px solid var(--border-gray);
-            margin: 2rem 0;
-        }
-
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .contact-info {
-                flex-direction: column;
-            }
-
-            .hours-grid {
-                grid-template-columns: 1fr;
-            }
-
-            h2 {
-                font-size: 1.4rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -337,108 +14,83 @@
                     <div class="logo-placeholder">S</div>
                     <div class="company-title">
                         <h1>Sterns Limited</h1>
-                        <p>Professional Dry Cleaning & Laundry</p>
+                        <p>Professional Dry Cleaning & Laundry Services</p>
                     </div>
                 </div>
                 <nav>
                     <ul>
-                        <li><button onclick="showPage('home')" class="nav-btn active">Home</button></li>
-                        <li><button onclick="showPage('about')" class="nav-btn">About</button></li>
-                        <li><button onclick="showPage('privacy')" class="nav-btn">Privacy</button></li>
-                        <li><button onclick="showPage('terms')" class="nav-btn">Terms</button></li>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <div id="home" class="page-content active">
-        <div class="hero">
-            <div class="container">
-                <h2>Welcome to Sterns Limited</h2>
-                <p>Your trusted partner for quality dry cleaning and professional garment care since serving the Halifax community</p>
-                <button class="cta-button" onclick="showPage('about')">Learn More About Us</button>
-            </div>
-        </div>
-
+    <div class="hero">
         <div class="container">
-            <div class="services-section">
-                <h2 style="text-align: center; margin-top: 0;">Our Services</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <h3>Dry Cleaning</h3>
-                        <p>Professional dry cleaning for all your clothing needs, using the highest quality care standards.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Laundry Services</h3>
-                        <p>Complete laundry services with careful attention to fabric care and quality pressing.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Alterations</h3>
-                        <p>Expert alterations and tailoring to perfect the fit of your favorite garments.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Wedding Gowns</h3>
-                        <p>Specialized care and preservation for wedding gowns and formal wear.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Household Items</h3>
-                        <p>Professional cleaning for comforters, curtains, and other household textiles.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Specialty Cleaning</h3>
-                        <p>Custom care for delicate fabrics and specialty garments requiring expert attention.</p>
-                    </div>
-                </div>
-            </div>
+            <h2>Premium Dry Cleaning & Laundry Services</h2>
+            <p>Professional care for your garments, trusted by Halifax residents</p>
+            <button class="cta-button">Get Started</button>
+        </div>
+    </div>
 
-            <h2>Business Hours</h2>
-            <div class="business-hours">
-                <div class="hours-grid">
-                    <div>
-                        <strong>Monday - Friday:</strong><br>8:00 AM - 5:00 PM
-                    </div>
-                    <div>
-                        <strong>Saturday:</strong><br>9:00 AM - 1:00 PM
-                    </div>
-                </div>
+    <div class="container services-section">
+        <h2 style="text-align: center; color: var(--primary-blue);">Services We Offer</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Dry Cleaning</h3>
+                <p>Professional care for suits, dresses, outerwear, and formal wear</p>
             </div>
-
-            <div class="contact-section">
-                <h3 style="color: white; margin-top: 0;">Get in Touch</h3>
-                <div class="contact-info">
-                    <div>
-                        <strong>Phone</strong><br>
-                        <a href="tel:902-892-6501">902-892-6501</a>
-                    </div>
-                    <div>
-                        <strong>Email</strong><br>
-                        <a href="mailto:sterns@sterns.ca">sterns@sterns.ca</a>
-                    </div>
-                    <div>
-                        <strong>Address</strong><br>
-                        234 Kent St<br>
-                        Halifax, Nova Scotia
-                    </div>
-                </div>
+            <div class="service-card">
+                <h3>Laundry Services</h3>
+                <p>Expert laundering with careful pressing and finishing</p>
+            </div>
+            <div class="service-card">
+                <h3>Alterations & Tailoring</h3>
+                <p>Expert seamstresses for custom fits and repairs</p>
+            </div>
+            <div class="service-card">
+                <h3>Wedding Gown Care</h3>
+                <p>Specialized preservation and cleaning for special occasion wear</p>
+            </div>
+            <div class="service-card">
+                <h3>Household Items</h3>
+                <p>Professional cleaning for comforters, curtains, blankets, and more</p>
+            </div>
+            <div class="service-card">
+                <h3>Specialty Cleaning</h3>
+                <p>Custom care for delicate and hard-to-clean fabrics</p>
             </div>
         </div>
     </div>
 
-    <div id="about" class="page-content">
-        <div class="hero">
-            <div class="container">
-                <h2>About Sterns Limited</h2>
-                <p>Your trusted partner in professional garment care</p>
+    <div class="container">
+        <div class="business-hours">
+            <h2 style="color: var(--primary-blue); margin-top: 0;">Business Hours</h2>
+            <div class="hours-grid">
+                <p><strong>Monday - Friday:</strong><br>8:00 AM - 5:00 PM</p>
+                <p><strong>Saturday:</strong><br>9:00 AM - 1:00 PM</p>
+                <p><strong>Sunday:</strong><br>Closed</p>
+                <p><strong>Public Holidays:</strong><br>Closed</p>
             </div>
         </div>
 
-        <div class="container">
-            <h2>Who We Are</h2>
-            <p>Sterns Limited has been proudly serving the Halifax community with professional dry cleaning, laundry, and garment care services. We understand that your clothing is an investment, and we treat every garment with the care and attention it deserves.</p>
+        <div class="contact-section">
+            <h3>Visit Us Today</h3>
+            <p>234 Kent St, Halifax, Nova Scotia</p>
+            <p>
+                <strong>Monday - Friday:</strong> 8:00 AM - 5:00 PM<br>
+                <strong>Saturday:</strong> 9:00 AM - 1:00 PM<br>
+                <strong>Phone:</strong> <a href="tel:902-892-6501">902-892-6501</a><br>
+                <strong>Email:</strong> <a href="mailto:sterns@sterns.ca">sterns@sterns.ca</a>
+            </p>
+        </div>
 
-            <h2>Our Commitment to Quality</h2>
-            <p>We are committed to providing exceptional service quality and customer satisfaction. Our team uses industry-leading techniques and the finest cleaning methods to ensure your garments are returned in pristine condition. Whether it's a delicate wedding gown, professional business attire, or everyday clothing, we have the expertise to care for all fabric types.</p>
+        <div class="main-content">
+            <h2>About Sterns Limited</h2>
+            <p>Welcome to Sterns Limited, your trusted partner for professional dry cleaning and laundry services in Halifax, Nova Scotia. With years of experience and a dedication to quality, we're committed to taking excellent care of your garments.</p>
 
             <h2>Services We Offer</h2>
             <ul>
@@ -458,154 +110,6 @@
                 <li>State-of-the-art cleaning facilities and methods</li>
                 <li>Personalized care for all garment types</li>
             </ul>
-
-            <div class="contact-section">
-                <h3 style="color: white; margin-top: 0;">Visit Us Today</h3>
-                <p style="color: white;">234 Kent St, Halifax, Nova Scotia</p>
-                <p style="color: white;">
-                    <strong>Monday - Friday:</strong> 8:00 AM - 5:00 PM<br>
-                    <strong>Saturday:</strong> 9:00 AM - 1:00 PM<br>
-                    <strong>Phone:</strong> <a href="tel:902-892-6501" style="color: white;">902-892-6501</a>
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div id="privacy" class="page-content">
-        <div class="hero">
-            <div class="container">
-                <h2>Privacy Policy</h2>
-                <p>Your privacy is important to us</p>
-            </div>
-        </div>
-
-        <div class="container">
-            <p><strong>Effective Date:</strong> January 2025</p>
-
-            <h2>Our Commitment to Your Privacy</h2>
-            <p>At Sterns Limited, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and protect your information.</p>
-
-            <h2>Information We Collect</h2>
-            <p>We may collect the following information from you:</p>
-            <ul>
-                <li>Name</li>
-                <li>Mobile phone number</li>
-                <li>Email address</li>
-                <li>Billing information (if applicable)</li>
-                <li>Service and order history</li>
-                <li>Communications with our business</li>
-            </ul>
-
-            <h2>How We Use Your Information</h2>
-            <p>We use your information to:</p>
-            <ul>
-                <li>Process and manage your dry cleaning orders</li>
-                <li>Notify you about order status and pickup availability</li>
-                <li>Respond to customer service requests</li>
-                <li>Send appointment reminders and service updates</li>
-                <li>Send promotional messages only if you have opted in</li>
-                <li>Improve our services</li>
-            </ul>
-
-            <h2>SMS Communications</h2>
-            <p>If you opt in to receive SMS messages, we may send order notifications, reminders, customer service updates, and promotional messages (where applicable).</p>
-            <ul>
-                <li>Message frequency varies.</li>
-                <li>Message and data rates may apply.</li>
-                <li>Reply STOP at any time to unsubscribe.</li>
-                <li>Reply HELP for assistance.</li>
-                <li>Your consent to receive SMS messages is not a condition of purchasing our services.</li>
-            </ul>
-
-            <p>We do not sell, rent, or share your mobile phone number or SMS consent with third parties or affiliates for their marketing purposes.</p>
-
-            <h2>Information Sharing</h2>
-            <p>We may share information with trusted service providers who help us operate our business (such as payment processors or SMS service providers) solely for the purpose of providing our services. These providers are required to protect your information and may not use it for their own marketing.</p>
-            <p>We may also disclose information when required by law.</p>
-
-            <h2>Data Security</h2>
-            <p>We take reasonable administrative, technical, and physical measures to protect your personal information from unauthorized access, disclosure, or misuse.</p>
-
-            <h2>Your Rights</h2>
-            <p>You may request to:</p>
-            <ul>
-                <li>Update your contact information</li>
-                <li>Access the personal information we maintain about you, where applicable by law</li>
-                <li>Request deletion of your personal information, subject to legal or operational recordkeeping requirements</li>
-                <li>Withdraw your SMS consent at any time by replying STOP</li>
-            </ul>
-
-            <h2>Changes to This Privacy Policy</h2>
-            <p>We may update this Privacy Policy periodically. Any changes will be posted on our website with a revised effective date.</p>
-
-            <h2>Contact Us</h2>
-            <p>If you have questions about this Privacy Policy, please contact:</p>
-            <p>
-                <strong>Sterns Limited</strong><br>
-                234 Kent St<br>
-                Halifax, Nova Scotia<br>
-                <strong>Phone:</strong> <a href="tel:902-892-6501">902-892-6501</a><br>
-                <strong>Email:</strong> <a href="mailto:sterns@sterns.ca">sterns@sterns.ca</a>
-            </p>
-        </div>
-    </div>
-
-    <div id="terms" class="page-content">
-        <div class="hero">
-            <div class="container">
-                <h2>Terms & Conditions</h2>
-                <p>Please read our terms carefully</p>
-            </div>
-        </div>
-
-        <div class="container">
-            <p><strong>Effective Date:</strong> January 2025</p>
-
-            <h2>Welcome to Sterns Limited</h2>
-            <p>By using our services or enrolling in our SMS text messaging program, you agree to these Terms & Conditions.</p>
-
-            <h2>Our Services</h2>
-            <p>Sterns Limited provides professional dry cleaning, laundry, and garment care services. We strive to provide quality service and timely order completion.</p>
-
-            <h2>SMS Messaging Program</h2>
-            <p>By providing your mobile phone number and opting in, you consent to receive SMS text messages from Sterns Limited. These messages may include:</p>
-            <ul>
-                <li>Order status updates</li>
-                <li>Pickup and drop-off notifications</li>
-                <li>Appointment reminders</li>
-                <li>Customer service communications</li>
-                <li>Promotional offers and special discounts (if you have separately opted in)</li>
-            </ul>
-
-            <p><strong>Message frequency</strong> varies based on your interactions with us.</p>
-            <p><strong>Message and data rates</strong> may apply according to your mobile carrier's plan.</p>
-
-            <p>You may opt out of receiving SMS messages at any time by replying <strong>STOP</strong> to any text message. After opting out, you will receive a confirmation message and no further SMS messages will be sent unless you opt in again.</p>
-
-            <p>For assistance, reply <strong>HELP</strong> or contact us at:</p>
-            <ul>
-                <li><strong>Phone:</strong> <a href="tel:902-892-6501">902-892-6501</a></li>
-                <li><strong>Email:</strong> <a href="mailto:sterns@sterns.ca">sterns@sterns.ca</a></li>
-            </ul>
-
-            <h2>Customer Responsibilities</h2>
-            <p>Customers are responsible for providing accurate contact information and notifying us of any changes to their phone number or email address.</p>
-
-            <h2>Limitation of Liability</h2>
-            <p>Sterns Limited is not responsible for delays or failures in message delivery caused by wireless carriers or other third-party service providers.</p>
-
-            <h2>Changes to These Terms</h2>
-            <p>We may update these Terms & Conditions from time to time. Any changes will be posted on our website with the updated effective date.</p>
-
-            <h2>Contact Us</h2>
-            <p>If you have any questions about these Terms & Conditions, please contact us:</p>
-            <p>
-                <strong>Sterns Limited</strong><br>
-                234 Kent St<br>
-                Halifax, Nova Scotia<br>
-                <strong>Phone:</strong> <a href="tel:902-892-6501">902-892-6501</a><br>
-                <strong>Email:</strong> <a href="mailto:sterns@sterns.ca">sterns@sterns.ca</a>
-            </p>
         </div>
     </div>
 
@@ -614,31 +118,10 @@
             <p>&copy; 2025 Sterns Limited. All rights reserved.</p>
             <p>234 Kent St, Halifax, Nova Scotia | <a href="tel:902-892-6501">902-892-6501</a> | <a href="mailto:sterns@sterns.ca">sterns@sterns.ca</a></p>
             <p style="margin-top: 1rem; font-size: 0.9rem;">
-                <button onclick="showPage('privacy')" style="background: none; border: none; color: white; cursor: pointer; text-decoration: underline; padding: 0;">Privacy Policy</button> | 
-                <button onclick="showPage('terms')" style="background: none; border: none; color: white; cursor: pointer; text-decoration: underline; padding: 0;">Terms & Conditions</button>
+                <a href="privacy.html">Privacy Policy</a> | 
+                <a href="terms.html">Terms & Conditions</a>
             </p>
         </div>
     </footer>
-
-    <script>
-        function showPage(pageName) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page-content');
-            pages.forEach(page => page.classList.remove('active'));
-
-            // Remove active class from all nav buttons
-            const navButtons = document.querySelectorAll('.nav-btn');
-            navButtons.forEach(btn => btn.classList.remove('active'));
-
-            // Show selected page
-            document.getElementById(pageName).classList.add('active');
-
-            // Add active class to clicked button
-            event.target.classList.add('active');
-
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-    </script>
 </body>
 </html>
